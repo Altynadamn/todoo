@@ -1,0 +1,206 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+#auth{
+    text-align: center;
+
+}
+
+#auth input{
+    width: 90%;
+}
+
+#todo {
+    background-color: white;
+    padding: 20px;
+    text-align: center;
+    width: 350px;
+}
+
+h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+input {
+    width: 90%;
+    padding: 10px;
+    margin: 10px 0;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    padding: 10px;
+    margin-top: 10px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    text-align: center;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+#taskList {
+    list-style-type: none;
+    padding: 0;
+    margin: 20px 0;
+    width: 100%;
+}
+
+#taskList li {
+    margin-bottom: 10px;
+    border-radius: 5px;
+    font-size: 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    position: relative;
+}
+
+#taskList .done {
+    text-decoration: line-through;
+    color: #6c757d;
+}
+
+#taskList button {
+    background-color: #dc3545;
+    margin-left: 5px;
+}
+
+#taskList button:hover {
+    background-color: #c82333;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    text-align: center;
+}
+
+.modal-content {
+    background-color: white;
+    margin: 15% auto;
+    width: 300px;
+    border-radius: 5px;
+}
+
+.modal input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#editModal button {
+    width: 48%;
+    margin-top: 10px;
+}
+
+#closeModalBtn {
+    background-color: #f8f9fa;
+    color: black;
+    border: 1px solid #ccc;
+}
+
+#saveChangesBtn {
+    background-color: #007bff;
+    color: white;
+}
+
+
+#taskList .done {
+    text-decoration: line-through;
+    color: #6c757d;
+    position: relative;
+    bottom: 0;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: white;
+    margin: 15% auto;
+    padding: 20px;
+    width: 300px;
+    border-radius: 5px;
+}
+
+.modal input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#editTaskTitle, #editTaskDesc {
+    width: 90%;
+}
+
+#editModal button {
+    width: 48%;
+    margin-top: 10px;
+}
+
+#closeModalBtn {
+    background-color: #f8f9fa;
+    color: black;
+    border: 1px solid #ccc;
+}
+
+#saveChangesBtn {
+    background-color: #007bff;
+    color: white;
+}
+
+.done {
+    text-decoration: line-through;
+    color: grey;
+}
+
+.done-button {
+    background-color: #d3d3d3;
+    color: #7a7a7a;
+}
+.done-button {
+    background-color: #6c757d;
+    cursor: not-allowed;
+}
+
+.done-button:hover {
+    background-color: #5a6268;
+}

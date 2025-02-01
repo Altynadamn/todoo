@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="auth">
+    <h2>Login / Register</h2>
+    <input type="text" id="username" placeholder="Username">
+    <input type="password" id="password" placeholder="Password">
+    <button onclick="register()">Register</button>
+    <button onclick="login()">Login</button>
+</div>
+
+<div id="todo" style="display:none;">
+    <h2>To-Do List</h2>
+    <input type="text" id="taskInput" placeholder="New task title">
+    <input type="text" id="descInput" placeholder="Task description">
+    <button onclick="addTask()">Add</button>
+    <ul id="taskList"></ul>
+    <button onclick="logout()">Logout</button>
+</div>
+
+<template id="taskTemplate">
+    <li class="task-item">
+        <div class="text_wrapper">
+            <span class="task-title"></span>
+            <p class="task-description"></p>
+        </div>
+        <div class="button_wrapper">
+            <button class="delete_button btn" onclick="deleteTask()">🗑️</button>
+            <button class="edit_button btn" onclick="editTask()">✏️</button>
+            <button class="done_button btn" onclick="toggleDone()">✔️</button>
+        </div>
+    </li>
+</template>
+
+<div id="editModal" class="modal">
+    <div class="modal-content">
+        <h3>Edit Task</h3>
+        <input type="text" id="editTaskTitle" placeholder="Task Title">
+        <input type="text" id="editTaskDesc" placeholder="Task Description">
+        <button id="saveChangesBtn" onclick="closeModal()">Save Changes</button>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
