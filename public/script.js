@@ -26,19 +26,40 @@ async function login() {
     const username = document.getElementById('username').value.trim();
     const password = document.getElementById('password').value.trim();
 
-    const response = await fetch('/login', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ username, password })
-    });
+    // Log the data to make sure it's correct
+    console.log('Username:', username);
+    console.log('Password:', password);
 
-    const data = await response.json();
+    // If either field is empty, show an alert
+    if (!username || !password) {
+        alert('⚠️ Please fill in both username and password!');
+        return;
+    }
 
-    if (response.ok) {
-        localStorage.setItem('token', data.token);
-        document.getElementById('auth').style.display = 'none';
-        document.getElementById('todo').style.display = 'block';
-        loadTasks();
+    try {
+        const response = await fetch('https://todoo-jh2e.onrender.com/login', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ username, password })
+        });
+
+        if (!response.ok) {
+            throw new Error(`Error: ${response.statusText}`);
+        }
+
+        const data = await response.json();
+
+        if (data.token) {
+            localStorage.setItem('token', data.token);
+            document.getElementById('auth').style.display = 'none';
+            document.getElementById('todo').style.display = 'block';
+            loadTasks();
+        } else {
+            alert('❌ Invalid login details.');
+        }
+    } catch (error) {
+        console.error('Login Error:', error);
+        alert('❌ Login failed. Please try again.');
     }
 }
 
